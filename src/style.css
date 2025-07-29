@@ -1,0 +1,1386 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Header and Navigation */
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Area */
+main {
+    padding: 20px 0;
+}
+
+/* Forms */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form input[type="time"], /* Added time for consistency */
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Specific styling for readonly inputs to make them look less like editable fields */
+form input[readonly].form-control-readonly {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: default;
+    border: 1px solid #ced4da;
+}
+
+
+form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    display: block;
+    width: auto;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.form-action-buttons-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+/*
+  Explicit styles for buttons within .form-action-buttons-group
+  to ensure identical width and height for edit_item_page.php
+*/
+/* Increased specificity for the submit button to override general form button[type="submit"].button-primary rules */
+form .form-action-buttons-group > button[type="submit"].button-primary,
+.form-action-buttons-group > a.button-secondary { /* Targets <a class="button-secondary"> - specificity is already fine here */
+    display: inline-block;
+    width: 170px; /* Ensure this width is applied */
+    height: 32px;
+    padding: 5px 10px; /* Consistent padding */
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    border-style: solid;
+    border-width: 1px;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Specific color overrides if the generic .button-primary/secondary are not specific enough or to ensure consistency */
+.form-action-buttons-group > .button-primary {
+    background-color: #007bff;
+    color: white;
+    border-color: #0069d9;
+}
+.form-action-buttons-group > .button-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.form-action-buttons-group > a.button-secondary {
+    background-color: #6c757d;
+    color: white;
+    border-color: #5a6268;
+}
+.form-action-buttons-group > a.button-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    transform: scale(1.05);
+}
+
+
+/* Item List on home.php */
+.item-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.item-list li strong {
+    color: #007bff;
+}
+
+/* Messages */
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.success-message {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.warning-message {
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.info-message {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: #007bff;
+    color: #fff;
+}
+
+/* Responsive Design (Basic Example) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="date"],
+    form input[type="time"],
+    form select,
+    form textarea {
+        font-size: 1em;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-row > div { /* Target direct children divs within form-row */
+        min-width: 100%;
+        margin-bottom: 15px; /* Add margin between stacked items */
+    }
+    .form-row > div:last-child {
+        margin-bottom: 0;
+    }
+    /* Responsive for table-header-controls on smaller screens */
+    .table-header-controls {
+        flex-direction: column !important; /* Stack action-bar and pagination vertically */
+        align-items: flex-start !important; /* Align stacked items to the left */
+        gap: 10px !important; /* Space between action-bar and pagination */
+    }
+    .action-bar, .pagination {
+        width: 100% !important; /* Make them take full width when stacked */
+        justify-content: flex-start !important; /* Align action bar items to left */
+        margin-left: 0 !important; /* Override auto margin for stacking */
+    }
+}
+
+/* Specific container adjustments if needed */
+.register-item-container,
+.home-container {
+    margin-top: 20px;
+}
+
+/* Ajustes específicos para .login-container para um design mais clean e menos horizontal */
+.login-container {
+    width: auto;
+    max-width: 450px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff;
+}
+/* Manter estilos para outros containers seletivamente se necessário */
+.register-item-container h2,
+.home-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.login-container form div {
+    margin-bottom: 20px;
+}
+
+.login-container form label {
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"] {
+    padding: 12px;
+}
+
+.login-container form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+
+/* General link styling - ADDED for theme consistency */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* === Admin Page Specific Styles === */
+
+/* Admin Container */
+.admin-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.admin-container h2,
+.admin-container h3 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.admin-container hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Admin Forms */
+.admin-container form label {
+    font-weight: bold;
+}
+
+.admin-container form input[type="text"],
+.admin-container form input[type="password"],
+form input[type="date"],
+form input[type="time"],
+.admin-container form select {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.admin-container form input[type="text"]:focus,
+.admin-container form input[type="password"]:focus,
+.admin-container form input[type="date"]:focus,
+.admin-container form input[type="time"]:focus,
+.admin-container form select:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.admin-container form button[type="button"] {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+.admin-container form button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+
+/* Inline forms styling from manage_users.php */
+.form-inline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-inline input[type="password"] {
+    width: auto;
+    flex-grow: 1;
+    margin-right: 5px;
+    padding: 8px;
+}
+.form-inline button {
+    margin-left: 5px;
+    padding: 8px 12px;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+
+/* Admin Tables */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 0;
+    table-layout: fixed;
+    border: none !important; /* REMOVE TODAS AS BORDAS DA TABELA EXTERNA */
+}
+
+.admin-table td.checkbox-cell,
+.admin-table th.checkbox-cell {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.admin-table .truncate-text { /* Class for cells needing text truncation */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #ddd; /* Estas bordas permanecem para o grid interno */
+    padding: 10px 12px;
+    text-align: center; /* ESTA É A REGRA QUE DEVERIA CENTRALIZAR TUDO (incluindo o ID) */
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.admin-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.admin-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Edit form sections if they are styled as distinct boxes */
+#editCategorySection, #editLocationSection {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #007bff;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+#editCategorySection h3, #editLocationSection h3 {
+    margin-top: 0;
+    color: #007bff;
+    text-align: left;
+}
+
+/* Barcode image styling */
+.barcode-image {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === Styles from home.php (Filters & Action Buttons) === */
+
+#itemListContainer {
+    overflow-x: auto;
+    border: none !important; /* CORREÇÃO APLICADA AQUI: Remove todas as bordas do #itemListContainer */
+    box-sizing: border-box;
+}
+
+.form-filters {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+}
+.form-filters h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+.filter-row > div {
+    flex: 1;
+    min-width: 200px;
+}
+.filter-row label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.filter-row select,
+.filter-row input[type="date"],
+.filter-row input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.filter-row select:focus,
+.filter-row input[type="date"]:focus,
+.filter-row input[type="text"]:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.filter-buttons .button-filter,
+.filter-buttons .button-filter-clear {
+    min-width: 130px;
+    padding: 8px 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, transform 0.2s ease-in-out;
+}
+.button-filter {
+    background-color: #007bff;
+    color:white;
+    border: 1px solid #0069d9;
+}
+.button-filter:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+.button-filter-clear {
+    background-color: #6c757d;
+    color:white;
+    border: 1px solid #5a6268;
+}
+.button-filter-clear:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    transform: scale(1.05);
+}
+
+/* General Action Buttons */
+
+form button[type="submit"].button-primary,
+form button[type="submit"].button-secondary,
+form button[type="submit"].button-edit,
+form button[type="submit"].button-delete,
+form button[type="submit"].button-details,
+form button[type="button"].button-primary,
+form button[type="button"].button-secondary,
+form button[type="button"].button-edit,
+form button[type="button"].button-delete,
+form button[type="button"].button-details {
+    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    display: inline-block;
+    width: auto;
+}
+
+.button-primary,
+.button-secondary,
+.button-edit,
+.button-delete,
+.button-details {
+    padding: 5px 10px;
+    font-size: 13px;
+    line-height: 1.4;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin:0;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.button-primary {
+    background-color: #007bff;
+    color: white;
+    border-color: #0069d9;
+}
+.button-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.button-secondary {
+    background-color: #6c757d;
+    color: white;
+    border-color: #5a6268;
+}
+.button-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    transform: scale(1.05);
+}
+
+.button-edit {
+    background-color: #ffc107;
+    color: #212529;
+    border-color: #e0a800;
+}
+.button-edit:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+    color: #212529;
+    transform: scale(1.05);
+}
+
+.button-delete {
+    background-color: #dc3545;
+    color: white;
+    border-color: #c82333;
+}
+.button-delete:hover {
+    background-color: #c82333;
+    border-color: #b01e2c;
+    color: white;
+    transform: scale(1.05);
+}
+
+.button-details {
+    background-color: #6c757d;
+    color: white;
+    border-color: #5a6268;
+}
+.button-details:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    transform: scale(1.05);
+}
+
+
+.button-large {
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/* Styles for Action Bar on home.php */
+.action-bar {
+    margin-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+.action-bar label {
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 5px;
+}
+.action-bar input[type="checkbox"] {
+    margin-right: 5px;
+}
+/* AQUI ESTÁ A CORREÇÃO PARA A ALTURA DOS BOTÕES DA BARRA DE AÇÃO */
+.action-bar button {
+    height: 34px !important; /* Altura fixa para corresponder aos botões de paginação */
+    line-height: 34px !important; /* Centraliza verticalmente o texto */
+    padding: 0 14px !important; /* Remove padding vertical, usa a altura fixa */
+    font-size: 0.9em !important; /* Garante que a fonte seja a mesma que os botões de paginação */
+    box-sizing: border-box !important; /* Inclui padding e borda na altura total */
+}
+
+
+/* Styles for Status Display */
+.item-status, .status-tag {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.3;
+}
+
+/* Centralizar conteúdo da célula de status na home.php */
+.admin-table td.status-cell {
+    text-align: center;
+}
+
+.status-pendente { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+.status-devolvido { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.status-doado { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+.admin-table td .item-status.status-aguardando-aprovacao,
+.admin-table td .status-tag.status-aguardando-aprovacao {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+.status-reprovado { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+
+/* Styles for Signature Pad */
+.signature-pad-container {
+    border: 1px solid #ccc;
+    max-width: 400px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    position: relative;
+    touch-action: none;
+}
+#signatureCanvas {
+    cursor: crosshair;
+    display: block;
+    width: 100%;
+    height: 200px;
+    touch-action: none;
+}
+
+
+/* Styles for Detailed View Section (e.g., manage_devolutions.php, view_donation_term_page.php) */
+.detailed-view-section, .view-term-container .term-section {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.detailed-view-section:last-child, .view-term-container .term-section:last-child {
+    border-bottom: none;
+}
+
+.detailed-view-section h3, .view-term-container .term-section h3,
+.detailed-view-section h4 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.detailed-view-section h4 {
+    font-size: 1.15em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.detailed-view-section p, .view-term-container p {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+.detailed-view-section strong, .view-term-container strong {
+    color: #333;
+}
+.signature-image {
+    max-width: 100%;
+    width: 350px;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    display: block;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+
+/* === STYLES FOR ACTIONS COLUMN === */
+
+.admin-table td.home-actions-cell {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.actions-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.actions-wrapper > .button-details-home,
+.actions-wrapper > .button-edit,
+.actions-wrapper > .button-ver-termo,
+.actions-wrapper > .delete-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    min-height: 32px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.actions-wrapper > .delete-form {
+    padding: 0;
+    border: none;
+    background: none;
+    height: 32px;
+}
+
+.actions-wrapper .delete-form .button-delete {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- Paginação --- */
+.pagination {
+    display: flex !important; /* Força display flex */
+    justify-content: flex-end !important; /* Força alinhamento à direita */
+    align-items: center !important; /* Força alinhamento vertical */
+    margin-top: 0 !important; /* Força remoção da margem superior */
+    margin-bottom: 0 !important; /* Força remoção da margem inferior */
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+    width: auto !important; /* Ajusta a largura ao conteúdo no layout flex principal */
+    flex-shrink: 0; /* Previne que a paginação encolha */
+}
+
+.pagination-top-right {
+    /* Esta classe agora principalmente serve como um marcador, o alinhamento é feito por .pagination e .table-header-controls */
+}
+
+.pagination-bottom-right {
+    margin-top: 15px !important; /* Mantenha essa margem para o espaçamento inferior */
+    border-top: none !important; /* REMOVE A BORDA SUPERIOR DA PAGINAÇÃO INFERIOR */
+}
+
+
+.pagination-link {
+    padding: 8px 14px; /* Padding que define a altura visual dos botões de paginação */
+    border: 1px solid #ddd;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-size: 0.9em;
+    white-space: nowrap;
+    height: 34px; /* Explicitamente define a altura para corresponder aos botões da action-bar */
+    line-height: 18px; /* Ajusta para centralizar o texto com 8px de padding */
+    box-sizing: border-box;
+    display: flex; /* Para garantir que padding e line-height funcionem bem para centralizar */
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pagination-link:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination-link.current-page {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+    cursor: default;
+}
+
+.pagination-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+.pagination-dots {
+    padding: 8px 0;
+    color: #6c757d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* CONTÊINER PARA BARRA DE AÇÃO E PAGINAÇÃO SUPERIOR - NOVO E CRUCIAL */
+.table-header-controls {
+    display: flex !important; /* Força display flex */
+    justify-content: space-between !important; /* Força espaçamento entre os filhos */
+    align-items: center !important; /* Força alinhamento vertical */
+    width: 100% !important; /* Garante que ocupe toda a largura disponível */
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+
+/* --- ESTILOS DE IMPRESSÃO - ESTE BLOCO DEVE FICAR NO FINAL DO CSS --- */
+@media print {
+    /* --- General Print Resets & Body --- */
+    body {
+        font-family: 'Times New Roman', Times, serif !important;
+        font-size: 12pt !important;
+        color: #000 !important;
+        background-color: #fff !important;
+        margin: 20mm !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* --- Hide Non-Essential Page Elements --- */
+    header, nav, footer, .filter-buttons button, .filter-buttons a, .action-bar,
+    .admin-table button, .admin-table .button-edit, .admin-table .button-delete,
+    .admin-table td.actions-cell > a.button-edit,
+    .admin-table td.actions-cell > form button,
+    .admin-table td.actions-cell .button-details-home,
+    .form-filters,
+    .form-action-buttons-group a.button-secondary,
+    .form-action-buttons-group button.button-primary,
+    .term-actions.no-print,
+    .pagination, /* Ocultar paginação na impressão */
+    .table-header-controls /* Ocultar o contêiner superior para impressão */
+    {
+        display: none !important;
+    }
+
+    /* Ensure general links are black and not underlined for print */
+    a, a:visited {
+        color: #000 !important;
+        text-decoration: none !important;
+    }
+
+    /* --- General Container and Table Styling for Print --- */
+    .container, .admin-container, .view-term-container {
+        box-shadow: none !important;
+        border: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background-color: #fff !important;
+    }
+
+    .admin-table {
+        width: 100% !important;
+        border: 1px solid #ccc !important;
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+    }
+    .admin-table th, .admin-table td {
+        border: 1px solid #ddd !important;
+        padding: 6pt 8pt !important;
+        font-size: 10pt !important;
+        vertical-align: top;
+    }
+    .admin-table th {
+        background-color: #eee !important;
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+    .admin-table tr:nth-child(even) {
+        background-color: #fff !important;
+    }
+
+    /* --- Specific Styling for Term View Pages (e.g., view_donation_term_page.php) for Print --- */
+    .view-term-container > h2 {
+        text-align: center;
+        font-size: 16pt !important;
+        margin-bottom: 1.5em;
+    }
+    .view-term-container .term-section {
+        border-bottom: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 1.2em;
+    }
+    .view-term-container .term-section h3 {
+        font-size: 14pt !important;
+        color: #000 !important;
+        border-bottom: 1px solid #aaa !important;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.8em;
+    }
+    .view-term-container p {
+        font-size: 12pt !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.6em;
+    }
+    .view-term-container .signature-image {
+        max-width: 280px !important;
+        border: 1px solid #666 !important;
+        margin-top: 1em;
+    }
+    .item-status, .status-tag {
+        border: 1px solid #999 !important;
+        color: #000 !important;
+        background-color: #fff !important;
+        padding: 2pt 5pt !important;
+    }
+}
+
+
+/* Action Group Styling for home.php actions-cell */
+.action-group-inline {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.action-group-inline > a,
+.action-group-inline > form {
+    margin: 0;
+}
+
+.action-group-centered {
+    text-align: center;
+}
+.action-group-centered .button-ver-termo {
+    display: inline-block;
+}
+
+/* Styling for disabled action buttons in tables or elsewhere */
+.button-edit.disabled,
+a.button-edit.disabled,
+button.button-delete:disabled,
+button.button-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc !important;
+    border-color: #bbb !important;
+    color: #666 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+a.button-edit.disabled:hover,
+a.button-secondary.disabled:hover {
+    background-color: #ccc !important;
+    color: #666 !important;
+    text-decoration: none !important;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styles for rounded data sections */
+.data-section-rounded {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #f9f9f9;
+}
+
+.data-section-rounded legend {
+    font-weight: bold;
+    color: #007bff;
+    padding: 0 10px;
+    margin-left: 10px;
+    font-size: 1.15em;
+}
+
+/* Form Layout Utilities */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group_col {
+    flex: 1;
+    min-width: 150px;
+}
+
+.form-group_col_full {
+    flex-basis: 100%;
+}
+
+.form-group_col_large {
+    flex: 2;
+    min-width: 200px;
+}
+
+.form-group_col_small {
+    flex: 0.5;
+    min-width: 100px;
+}
+
+/* Ensure labels and inputs within these columns behave as expected */
+.form-group_col label,
+.form-group_col_full label,
+.form-group_col_large label,
+.form-group_col_small label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group_col input[type="text"],
+.form-group_col input[type="date"],
+.form-group_col input[type="time"],
+.form-group_col select,
+.form-group_col_full input[type="text"],
+.form-group_col_large input[type="text"],
+.form-group_col_small input[type="text"],
+.form-group_col_small input[type="date"],
+.form-group_col_small input[type="time"],
+.form-group_col_small select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-control-readonly {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: default;
+    border: 1px solid #ced4da;
+}
+
+.form-modern {
+    /* Styles for the form itself, e.g., margin-top if not already handled by parent */
+}
+
+/* Styles for approval action buttons on view_donation_term_page.php */
+.approval-actions {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom:20px;
+    border-top: 1px solid #e0e0e0;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+}
+.approval-actions .button-primary,
+.approval-actions .button-delete {
+    font-size: 1em;
+    padding: 10px 20px;
+}
+
+/* === MANAGE USERS ACTIONS COLUMN - REVISED ALT - START === */
+
+.admin-table td.user-actions-cell {
+    padding: 8px !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper > .button-edit {
+    width: 160px !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper > form.form-inline {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 160px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper > form.form-inline > input[type="password"] {
+    width: 100% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    box-sizing: border-box !important;
+    padding: 5px 8px !important;
+    font-size: 13px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    text-align: left;
+    margin: 0 !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper > form.form-inline > .button-secondary {
+    width: 100% !important;
+    height: 30px !important;
+    min-height: 30px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper > form:not(.form-inline) {
+    display: flex !important;
+    width: 160px !important;
+    height: 30px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+
+.admin-table td.user-actions-cell > .user-actions-content-wrapper > form:not(.form-inline) > .button-delete {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 30px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+/* === MANAGE USERS ACTIONS COLUMN - REVISED ALT - END === */
+
+/* Specific styling for category actions cell to ensure row layout via non-flex */
+.admin-table td.category-actions-cell-override {
+    display: table-cell !important;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.admin-table td.category-actions-cell-override button {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.admin-table td.category-actions-cell-override button + button {
+    margin-left: 8px;
+}
+
+
+/* Form Two-Column Layout for Register User Form */
+.register-user-form .form-fields-wrapper-2col {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.register-user-form .form-fields-wrapper-2col .form-field-group {
+    flex: 1 1 calc(50% - 10px);
+    box-sizing: border-box;
+    min-width: 250px;
+}
+
+.register-user-form .form-field-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.register-user-form .form-field-group input[type="text"],
+.register-user-form .form-field-group input[type="password"],
+.register-user-form .form-field-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.register-user-form .form-submit-group {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .register-user-form .form-fields-wrapper-2col .form-field-group {
+        flex-basis: 100%;
+    }
+    .register-user-form .form-fields-wrapper-2col {
+        gap: 0;
+    }
+    .register-user-form .form-fields-wrapper-2col .form-field-group {
+        margin-bottom: 15px;
+    }
+    .register-user-form .form-fields-wrapper-2col .form-field-group:last-of-type {
+        margin-bottom: 0;
+    }
+}
